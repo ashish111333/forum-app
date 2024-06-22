@@ -15,10 +15,16 @@ Router.post("/",(req,res)=>{})
 
 
 
+
 function returnALLposts(req,res){
 
+
     
-     
+
+  
+    
+
+    
     
     
     
@@ -26,6 +32,9 @@ function returnALLposts(req,res){
 function returnPostById(req,res){
 
 
+
+    
+    
     
     
     
@@ -34,6 +43,7 @@ function returnPostById(req,res){
 
 function  createPost(req,res){
 
+    
     
 
     

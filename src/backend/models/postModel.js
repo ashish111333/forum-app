@@ -2,18 +2,26 @@ import mongoose from "mongoose";
 
 
 
-const postSchema=mongoose.Schema({
+const postSchema=new mongoose.Schema({
 
 
 
-    body:String,
+    content:{
+        type:String,
+        required:true,
+    },
     user_id:String,
-    likes:Number,
+    
     dislikes:Number,
-
+    likes:Number,
     
-    
+        
 })
 
 
+
+
+
 export const post=mongoose.model("post",postSchema)
+
+

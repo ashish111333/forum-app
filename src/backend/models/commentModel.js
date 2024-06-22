@@ -2,13 +2,16 @@ import mongoose from "mongoose";
 
 
 
-const commentSchema=mongoose.Schema({
+const commentSchema= new mongoose.Schema({
     
 
-    body:String,
+    content:{
+        type:String,
+        required:true,
+    },
     likes:Number,
     dislikes:Number,
-    
+    user_id:String,
     
 })
 
