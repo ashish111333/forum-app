@@ -2,6 +2,7 @@ import express from "express"
 
 import { post } from "../models/postModel"
 
+
 export const Router=express.Router()
 
 
@@ -16,19 +17,17 @@ Router.post("/",(req,res)=>{returnALLposts(req,res)})
 
 
 
-function returnALLposts(req,res){
+async function returnALLposts(req,res){
 
 
- 
+    const posts=await post.find({})
+    
+
+
+    
     
     
 
-
-    
-    
-
-    
-  
     
 
     
@@ -39,6 +38,8 @@ function returnALLposts(req,res){
 function returnPostById(req,res){
 
 
+
+    
 
     
     
@@ -55,11 +56,8 @@ async function  createPost(req,res){
     
 
     const newPost=new post({content:content})
-    
+    await newPost.save()
     
     
 
-    
-    
-    
 }
