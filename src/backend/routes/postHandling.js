@@ -1,14 +1,14 @@
 import express from "express"
 
+import { post } from "../models/postModel"
 
-
-const Router=express.Router()
+export const Router=express.Router()
 
 
 
 Router.get("/posts/:post_id",(req,res)=>{})
 Router.get("/posts",(req,res)=>{})
-Router.post("/",(req,res)=>{})
+Router.post("/",(req,res)=>{returnALLposts(req,res)})
 
 
 
@@ -19,8 +19,15 @@ Router.post("/",(req,res)=>{})
 function returnALLposts(req,res){
 
 
+ 
+    
     
 
+
+    
+    
+
+    
   
     
 
@@ -41,8 +48,14 @@ function returnPostById(req,res){
 }
 
 
-function  createPost(req,res){
+async function  createPost(req,res){
 
+    
+    const {content}=req.body
+    
+
+    const newPost=new post({content:content})
+    
     
     
 

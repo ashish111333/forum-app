@@ -1,7 +1,7 @@
 import express from "express"
 
 
-const Router=express.Router()
+export const Router=express.Router()
 
 
 

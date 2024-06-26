@@ -2,7 +2,7 @@ import express from "express"
 import { user } from "../models/userModel"
 import * as b from "bcrypt"
 
-const  Router=express.Router()
+export const  Router=express.Router()
 
 
 
