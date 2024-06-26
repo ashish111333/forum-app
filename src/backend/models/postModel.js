@@ -14,7 +14,7 @@ const postSchema=new mongoose.Schema({
     
     dislikes:Number,
     likes:Number,
-    
+    post_id:String,
         
 })
 

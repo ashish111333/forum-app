@@ -1,6 +1,6 @@
 import express from "express"
 
-import { post } from "../models/postModel"
+import { post, post } from "../models/postModel"
 
 
 export const Router=express.Router()
@@ -23,22 +23,16 @@ async function returnALLposts(req,res){
     const posts=await post.find({})
     
 
-
-    
-    
-    
-
-    
-
-    
     
     
     
 }
+
 function returnPostById(req,res){
 
 
 
+    
     
 
     
