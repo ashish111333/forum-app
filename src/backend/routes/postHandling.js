@@ -18,13 +18,15 @@ Router.post("/",(req,res)=>{returnALLposts(req,res)})
 
 
 async function returnALLposts(req,res){
-
-
-    const posts=await post.find({})
-    
-
     
     
+
+    const postPerPage=5
+    const pageNumber=req.params.page_no
+    const latestPosts=await post.find({})
+    res.send()
+    
+
     
 }
 
@@ -32,7 +34,9 @@ function returnPostById(req,res){
 
 
 
-    
+
+
+    const {post_id}=
     
 
     
@@ -48,10 +52,7 @@ async function  createPost(req,res){
     
     const {content}=req.body
     
-
     const newPost=new post({content:content})
     await newPost.save()
     
-    
-
 }
