@@ -1,15 +1,15 @@
 import express from "express"
 
-import { post, post } from "../models/postModel"
+import { post } from "../models/postModel"
 
 
-export const Router=express.Router()
+export const postRouter=express.post()
 
 
 
-Router.get("/posts/:post_id",(req,res)=>{})
-Router.get("/posts",(req,res)=>{})
-Router.post("/",(req,res)=>{returnALLposts(req,res)})
+postRouter.get("/posts/:post_id",(req,res)=>{})
+postRouter.get("/posts",(req,res)=>{})
+postRouter.post("/",(req,res)=>{returnALLposts(req,res)})
 
 
 
@@ -25,6 +25,7 @@ async function returnALLposts(req,res){
     const pageNumber=req.params.page_no
     const latestPosts=await post.find({})
     res.send()
+
     
 
     

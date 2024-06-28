@@ -2,12 +2,12 @@ import express from "express"
 import { user } from "../models/userModel"
 import * as b from "bcrypt"
 
-export const  Router=express.Router()
+export const  authRouter=express.Router()
 
 
 
 
-Router.post("/auth/register",async (req,res)=>{
+authRouter.post("/auth/register",async (req,res)=>{
 
     const {username,password}=req.body
     const hashedPassword= await b.hash(password,10)
@@ -29,7 +29,7 @@ Router.post("/auth/register",async (req,res)=>{
 })
 
 
-Router.post("/auth/login",async (req,res)=>{
+authRouter.post("/auth/login",async (req,res)=>{
     
 
     const {username,password}=req.body

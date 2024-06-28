@@ -3,6 +3,10 @@ import express from "express";
 import dotenv from "dotenv"
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import { authRouter } from "./routes/authHandling";
+import { postRouter } from "./routes/postHandling"
+import { userRouter } from "./routes/userHandling";
+
 
 
 dotenv.config()
@@ -12,7 +16,13 @@ const port=process.env.port
 
 
 app.use(bodyParser.json())
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended:true}))
+app.use(authRouter)
+app.use(postRouter)
+app.use(userRouter)
+
+
+
 
 
 app.listen(port,()=>{
