@@ -9,6 +9,7 @@ import { userRouter } from "./routes/userHandling";
 
 
 
+
 dotenv.config()
 connectToDatabase(process.env.DB_URL)
 const app=express()

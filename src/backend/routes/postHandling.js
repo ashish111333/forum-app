@@ -23,8 +23,8 @@ async function returnALLposts(req,res){
 
     const postPerPage=5
     const pageNumber=req.params.page_no
-    const latestPosts=await post.find({})
-    res.send()
+    const posts=await post.find({}).sort({_id:-1}).skip(postPerPage*pageNumber).limit(postPerPage)
+    res.send(posts)
 
     
 
@@ -35,8 +35,8 @@ function returnPostById(req,res){
 
 
 
-
-
+    
+    
     const {post_id}=
     
 
