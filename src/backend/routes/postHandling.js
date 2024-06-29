@@ -1,6 +1,6 @@
 import express from "express"
 
-import { post } from "../models/postModel"
+import { post, post } from "../models/postModel"
 
 
 export const postRouter=express.post()
@@ -24,25 +24,16 @@ async function returnALLposts(req,res){
     const postPerPage=5
     const pageNumber=req.params.page_no
     const posts=await post.find({}).sort({_id:-1}).skip(postPerPage*pageNumber).limit(postPerPage)
-    res.send(posts)
-
     
-
     
 }
 
-function returnPostById(req,res){
+async function returnPostById(req,res){
 
 
-
-    
-    
-    const {post_id}=
-    
-
-    
-    
-    
+    const {post_id}=req.params._id
+    const post=await post.find({_id:post_id})
+    res.send()
     
     
 }
